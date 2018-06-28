@@ -1,4 +1,19 @@
 <resources>
-    <string name="app_name">PersonalizarSpinner</string>
+    <string name="app_name">Personalizar Spinner</string>
     <string name="action_settings">Settings</string>
+  <string-array name="spinner_items">
+    <item>Item no. 1</item>
+    <item>Item no. 2</item>
+    <item>Item no. 3</item>
+    <item>Item no. 4</item>
+    <item>Item no. 5</item>
+    <item>Item no. 6</item>
+    <item>Item no. 7</item>
+    <item>Item no. 8</item>
+    <item>Item no. 9</item>
+    <item>Item no. 10</item>
+    <item>Item no. 11</item>
+    <item>Item no. 12</item>
+    <item>Item no. 13</item>
+  </string-array>
 </resources>

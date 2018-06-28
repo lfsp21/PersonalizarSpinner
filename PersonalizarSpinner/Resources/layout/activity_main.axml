@@ -4,4 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <TextView
+        android:text="Custom Spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1"
+        android:textColor="@android:color/black"
+        android:padding="15dp"
+        android:textAlignment="center"
+        android:textSize="20dp" />
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/spinner_items"
+        android:spinnerMode="dialog"
+        android:id="@+id/custom_sp"
+        style="@style/SpinnerTheme3" />
 </RelativeLayout>

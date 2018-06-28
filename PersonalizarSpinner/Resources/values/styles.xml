@@ -8,4 +8,53 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+  <!-- Estilos de spinner -->
+ 
+  <style name="SpinnerTheme" parent="android:Widget.Spinner">
+    <item name="android:layout_margin">10dp</item>
+    <item name="android:paddingLeft">8dp</item>
+    <item name="android:paddingRight">20dp</item>
+    <item name="android:paddingTop">5dp</item>
+    <item name="android:paddingBottom">5dp</item>
+    <item name="android:popupBackground">#DFFFFFFF</item>
+    <item name="android:background">@drawable/bg_SpinnerTheme</item>
+  </style>
+
+  <style name="SpinnerTheme2" parent="android:Widget.Spinner">
+    <item name="android:layout_margin">10dp</item>
+    <item name="android:divider">#d1d1d1</item>
+    <item name="android:dividerHeight">0.5dp</item>
+    <item name="android:paddingLeft">8dp</item>
+    <item name="android:paddingRight">20dp</item>
+    <item name="android:paddingTop">5dp</item>
+    <item name="android:paddingBottom">5dp</item>
+    <item name="android:popupBackground">#DFFFFFFF</item>
+    <item name="android:background">@drawable/bg_SpinnerTheme2</item>
+  </style>
+
+
+  <style name="SpinnerTheme3" parent="android:Widget.Spinner">
+    <item name="android:layout_margin">10dp</item>
+    <item name="android:divider">#d1d1d1</item>
+    <item name="android:dividerHeight">0.5dp</item>
+    <item name="android:paddingLeft">8dp</item>
+    <item name="android:paddingRight">20dp</item>
+    <item name="android:paddingTop">5dp</item>
+    <item name="android:paddingBottom">5dp</item>
+    <item name="android:popupBackground">#DFFFFFFF</item>
+    <item name="android:background">@drawable/bg_SpinnerTheme3</item>
+  </style>
+
+  <style name="SpinnerTheme4" parent="android:Widget.Spinner">
+    <item name="android:layout_margin">10dp</item>
+    <item name="android:divider">#d1d1d1</item>
+    <item name="android:dividerHeight">0.5dp</item>
+    <item name="android:paddingLeft">8dp</item>
+    <item name="android:paddingRight">20dp</item>
+    <item name="android:paddingTop">5dp</item>
+    <item name="android:paddingBottom">5dp</item>
+    <item name="android:popupBackground">#DFFFFFFF</item>
+    <item name="android:background">@drawable/bg_SpinnerTheme4</item>
+  </style>
+
 </resources>

@@ -3,4 +3,10 @@
     <color name="colorPrimary">#2c3e50</color>
     <color name="colorPrimaryDark">#1B3147</color>
     <color name="colorAccent">#3498db</color>
+
+  <!--Colores Spinner Theme 3 -->
+  <color name="stroke_sp3">#000000</color>
+  
+  <!--Colores Spinner Theme 2 -->
+  <color name="stroke_sp2">#ffc107</color>
 </resources>
