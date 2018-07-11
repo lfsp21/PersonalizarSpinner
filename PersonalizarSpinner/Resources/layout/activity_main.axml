@@ -20,4 +20,18 @@
         android:spinnerMode="dialog"
         android:id="@+id/custom_sp"
         style="@style/SpinnerTheme3" />
+    <Button
+        android:text="Selecciona"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView1"
+        style="@style/SpinnerTheme3"
+        android:id="@+id/btnOpenDialog" />
+    <TextView
+        android:text="Text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/SpinnerTheme3"
+        android:layout_below="@id/btnOpenDialog"
+        android:id="@+id/txtSpinner" />
 </RelativeLayout>

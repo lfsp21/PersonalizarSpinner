@@ -21,6 +21,8 @@ namespace PersonalizarSpinner
         private Spinner Sp;
         private string[] SpItems;
         private ArrayAdapter SpAdapter;
+        private Button btnD;
+        private TextView spTxt;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -34,12 +36,18 @@ namespace PersonalizarSpinner
                 FindViews();
 
                 //Obtiene el array de items del archivo strings
-                SpItems = Resources.GetStringArray(Resource.Array.spinner_items);
+               SpItems = Resources.GetStringArray(Resource.Array.spinner_items);
 
                 //Adapter para el elemento seleccionado (el fondo) y para el elemento dropdown
-                SpAdapter = ArrayAdapter.CreateFromResource(this, Resource.Array.spinner_items, Resource.Layout.spinner_selected_item);
-                SpAdapter.SetDropDownViewResource(Resource.Layout.spinner_dropdown_item);
-                Sp.Adapter = SpAdapter;
+               SpAdapter = ArrayAdapter.CreateFromResource(this, Resource.Array.spinner_items, Resource.Layout.spinner_selected_item);
+               SpAdapter.SetDropDownViewResource(Resource.Layout.spinner_dropdown_item);
+               Sp.Adapter = SpAdapter;
+
+                EventHandler();
+
+
+               
+
             }
             catch (Exception)
             {
@@ -50,11 +58,46 @@ namespace PersonalizarSpinner
 
         }
 
+        void EventHandler()
+        {
+            btnD.Click += BtnD_Click;
+            spTxt.Click += SpTxt_Click;
+        }
+
+        private void SpTxt_Click(object sender, EventArgs e)
+        {
+            ShowCustomAlertDialog();
+        }
+
+        private void BtnD_Click(object sender, EventArgs e)
+        {
+            ShowCustomAlertDialog();
+      
+        }
+
         void FindViews()
         {
             Sp = FindViewById<Spinner>(Resource.Id.custom_sp);
-
+            btnD = FindViewById<Button>(Resource.Id.btnOpenDialog);
+            spTxt = FindViewById<TextView>(Resource.Id.txtSpinner);
         }
+
+        void ShowCustomAlertDialog()
+        {
+            //Inflate layout
+            View view = LayoutInflater.Inflate(Resource.Layout.spinner_dialog, null);
+            Android.App.AlertDialog builder = new Android.App.AlertDialog.Builder(this).Create();
+            builder.SetView(view);
+            builder.SetCanceledOnTouchOutside(false);
+            Button button = view.FindViewById<Button>(Resource.Id.btnClearLL);
+            button.Click += delegate {
+                builder.Dismiss();
+                Toast.MakeText(this, "Alert dialog dismissed!", ToastLength.Short).Show();
+            };
+            builder.Show();
+        }
+
+        
     }
 }
 
