@@ -19,7 +19,7 @@ namespace PersonalizarSpinner
     {
 
         private Spinner Sp;
-        private string[] SpItems;
+        private string[] spItems;
         private ArrayAdapter SpAdapter;
         private Button btnD;
         private TextView spTxt;
@@ -36,7 +36,7 @@ namespace PersonalizarSpinner
                 FindViews();
 
                 //Obtiene el array de items del archivo strings
-               SpItems = Resources.GetStringArray(Resource.Array.spinner_items);
+               spItems = Resources.GetStringArray(Resource.Array.spinner_items);
 
                 //Adapter para el elemento seleccionado (el fondo) y para el elemento dropdown
                SpAdapter = ArrayAdapter.CreateFromResource(this, Resource.Array.spinner_items, Resource.Layout.spinner_selected_item);
@@ -66,7 +66,7 @@ namespace PersonalizarSpinner
 
         private void SpTxt_Click(object sender, EventArgs e)
         {
-            ShowCustomAlertDialog();
+            CustomDialog();
         }
 
         private void BtnD_Click(object sender, EventArgs e)
@@ -97,7 +97,29 @@ namespace PersonalizarSpinner
             builder.Show();
         }
 
-        
+        void CustomDialog()
+        {
+            ContextThemeWrapper ctw = new ContextThemeWrapper(this, Resource.Style.Theme_Dialog_N);
+            Android.App.AlertDialog.Builder ad = new Android.App.AlertDialog.Builder(ctw);
+
+            //LayoutInflater inflater = this.LayoutInflater;
+            //ad.SetView(inflater.Inflate(Resource.Layout.dialogWindow, null));
+            ad.SetTitle("Previt");
+            ad.SetSingleChoiceItems(spItems, -1, SingleChoiceAction);
+            ad.SetPositiveButton("Cancelar", delegate { });
+            Android.App.AlertDialog mDialog = ad.Create();
+            mDialog.Show();
+            //mDialog.Window.SetBackgroundDrawableResource(Resource.Color.colorPrimary);
+        }
+
+        private void SingleChoiceAction(object sender, DialogClickEventArgs e)
+        {
+            var d = (sender as Android.App.AlertDialog);
+            spTxt.Text = spItems[e.Which];
+      
+            // Dismiss Dialog
+            d.Dismiss();
+        }
     }
 }
 

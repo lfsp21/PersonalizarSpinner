@@ -4274,6 +4274,9 @@ namespace PersonalizarSpinner
 			// aapt resource value: 0x7f0a010d
 			public const int ThemeOverlay_AppCompat_Light = 2131362061;
 			
+			// aapt resource value: 0x7f0a0185
+			public const int Theme_Dialog_N = 2131362181;
+			
 			// aapt resource value: 0x7f0a010e
 			public const int Widget_AppCompat_ActionBar = 2131362062;
 			
