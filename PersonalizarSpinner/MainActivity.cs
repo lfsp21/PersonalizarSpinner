@@ -132,12 +132,12 @@ namespace PersonalizarSpinner
             ad.SetTitle("Previt");
             ad.SetCancelable(true);
             ad.SetView(dialogView);
-            
+
             // there are a lot of settings, for dialog, check them all out!
             // set up radiobutton
-            
-            RadioButton rd1 = dialogView.FindViewById<RadioButton>(Resource.Id.rd_1);
-            RadioButton rd2 = dialogView.FindViewById<RadioButton>(Resource.Id.rd_2);
+            ad.SetSingleChoiceItems(spItems, -1, SingleChoiceAction);
+            //RadioButton rd1 = dialogView.FindViewById<RadioButton>(Resource.Id.rd_1);
+           // RadioButton rd2 = dialogView.FindViewById<RadioButton>(Resource.Id.rd_2);
             Android.App.AlertDialog mDialog = ad.Create();
             mDialog.Show();
             // now that the dialog is set up, it's time to show it
