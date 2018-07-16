@@ -71,7 +71,8 @@ namespace PersonalizarSpinner
 
         private void BtnD_Click(object sender, EventArgs e)
         {
-            ShowCustomAlertDialog();
+            //ShowCustomAlertDialog();
+            CheckedDialog();
       
         }
 
@@ -109,7 +110,8 @@ namespace PersonalizarSpinner
             ad.SetPositiveButton("Cancelar", delegate { });
             Android.App.AlertDialog mDialog = ad.Create();
             mDialog.Show();
-            //mDialog.Window.SetBackgroundDrawableResource(Resource.Color.colorPrimary);
+           // mDialog.GetButton(ad.SetPositiveButton).SetTextColor();
+                //mDialog.Window.SetBackgroundDrawableResource(Resource.Color.colorPrimary);
         }
 
         private void SingleChoiceAction(object sender, DialogClickEventArgs e)
@@ -119,6 +121,27 @@ namespace PersonalizarSpinner
       
             // Dismiss Dialog
             d.Dismiss();
+        }
+
+        private void CheckedDialog()
+        {
+            //View view = LayoutInflater.Inflate(Resource.Layout.customPopup, null);
+            Android.App.AlertDialog.Builder ad = new Android.App.AlertDialog.Builder(this);
+            LayoutInflater inflater = LayoutInflater;
+            View dialogView = inflater.Inflate(Resource.Layout.customPopup, null);
+            ad.SetTitle("Previt");
+            ad.SetCancelable(true);
+            ad.SetView(dialogView);
+            
+            // there are a lot of settings, for dialog, check them all out!
+            // set up radiobutton
+            
+            RadioButton rd1 = dialogView.FindViewById<RadioButton>(Resource.Id.rd_1);
+            RadioButton rd2 = dialogView.FindViewById<RadioButton>(Resource.Id.rd_2);
+            Android.App.AlertDialog mDialog = ad.Create();
+            mDialog.Show();
+            // now that the dialog is set up, it's time to show it
+            
         }
     }
 }
